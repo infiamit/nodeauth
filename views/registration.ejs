@@ -1,0 +1,63 @@
+<%- include('header'); -%>
+<center><h1><%= title %></h1></center>
+     
+<div class="alert">
+<%  if(typeof errors !== 'undefined') errors.forEach(function(errors){%><div class="alert alert-danger"> <%= errors.msg %></div><%}); %>
+</div>
+<form action="/users/registration" method="POST">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Username</label>
+      <input   class="form-control" id="inputPassword4" name='username' placeholder="Username">
+    </div>
+  </div>
+   <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Password</label>
+      <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Confirm Password</label>
+      <input type="password" class="form-control" id="inputPassword4" name='password2' placeholder="Confirm Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" name='address' id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" name='address2' placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" name='city' id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" name='state' class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" name='zip' class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" name='check' type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check to accept terms and conditions
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+ <%- include('footer'); -%>
